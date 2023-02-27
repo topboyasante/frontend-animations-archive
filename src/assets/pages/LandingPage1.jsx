@@ -6,6 +6,15 @@ function LandingPage1() {
     function HeroAnimations(){
         gsap.registerPlugin(ScrollTrigger)
         gsap.to(".title",{duration:3, opacity:'100%',stagger:0.05});
+        gsap.to(".about-text", {
+            scrollTrigger:{
+                trigger: ".about-text",
+                toggleActions:'restart pause reverse none',
+                scrub:true
+            }, 
+            duration:3,
+            opacity:100,
+          });
     }
 
     useEffect(()=>{
@@ -50,9 +59,9 @@ function LandingPage1() {
             <section className='flex flex-col lg:flex-row items-center justify-between'>
                 <img 
                 src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2344&q=80" 
-                alt="imgg" className='w-full lg:w-[50%]'
+                alt="imgg" className='w-full lg:w-[50%] about-img opacity-0'
                 />
-                <p className='lg:w-[40%] text-cc text-xl tracking-wider'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas facere odio harum cum blanditiis molestias voluptate sint iste at id ullam deserunt non magni adipisci itaque doloribus. 
+                <p className='lg:w-[40%] text-cc text-xl tracking-wider b about-text opacity-0'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas facere odio harum cum blanditiis molestias voluptate sint iste at id ullam deserunt non magni adipisci itaque doloribus. 
                     Ab minus cupiditate voluptatibus eaque iste. Deserunt, sapiente, id vel possimus inventore quas et nulla impedit, 
                     repudiandae autem totam hic. Atque, itaque.
                 </p>
